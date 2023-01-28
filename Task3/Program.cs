@@ -3,17 +3,22 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
-int [] numbers = new int[8];
-Console.Write("[");
+int Mas = 8;
 
-for (int i = 0; i < numbers.Length; i++)
- {
-    numbers [i] = new Random().Next(0, 11);
-    Console.Write(" " + Method (i) + " ");
- }
-Console.Write("]");
-
-int Method (int a)
+int[] Array1(int a)
 {
-    return numbers[a];
-} 
+    int[] arr = new int[a];
+    for (int i = 0; i < a; i++)
+    {
+        arr[i] = new Random().Next(1, 100);
+    }
+    return arr;
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        System.Console.Write($"{array[i]}, ");     
+}
+
+PrintArray(Array1(Mas));
